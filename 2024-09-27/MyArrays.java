@@ -5,16 +5,14 @@ public class MyArrays{
       if (i == nums.length - 1){
         result = result + nums[i];
       }
-      result = result + nums[i] + ",";
+      else result = result + nums[i] + ", ";
     }
     return "[" + result + "]";
   }
   public static int[] returnCopy(int[]ary){
-    int copy = 0;
     int[] duplicate = new int[ary.length];
     for (int i = 0; i < ary.length; i++){
-      copy = ary[i];
-      duplicate[i] = copy;
+      duplicate[i] = ary[i];
     }
     return duplicate;
   }
