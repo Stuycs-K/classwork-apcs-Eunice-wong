@@ -17,6 +17,13 @@ public class MyArrays{
     return duplicate;
   }
   public static int[] concatArray(int[]ary1, int[]ary2){
-    return ary1;
+    int[] dup = new int[ary1.length + ary2.length ];
+    for (int i = 0; i < ary1.length; i++){
+      dup[i] = ary1[i];
+    }
+    for (int i = 0; i < ary2.length; i++){
+      dup[ary1.length + i] = ary2[i];
+    }
+    return dup;
     }
   }
