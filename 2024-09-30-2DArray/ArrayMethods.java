@@ -23,23 +23,35 @@ public class ArrayMethods {
     }
     return result+"]";
   }
+  public static int arr2DSum(int[][]nums){
+    int sum = 0;
+    for(int i = 0; i < nums.length; i++){
+      for(int k = 0; k < nums[i].length; k++){
+          sum += nums[i][k];
+      }
+    }
+    return sum;
+  }
+  public static int[][] swapRC(int[][]nums){
+    int rows = nums.length;
+    int columns = nums[0].length;
+    int[][] result = new int[columns][rows];
+    for(int i = 0; i < columns; i++){
+      for(int k = 0; k < rows; i++){
+        result[i][k] = nums[k][i];
+      }
+    }
+    return result; 
+  }
+
   public static void main(String[] args){
     int[] test1d = new int[]{1, 2, 3, 4};
     int[][] test2d = new int[4][2];
     System.out.println("expected: [1, 2, 3, 4]\nresult: " + aryToString(test1d));
     System.out.println("expected: [[0, 0], [0, 0], [0, 0], [0, 0]]\nresult: " + arrToString(test2d));
-  }
-  public static int arr2DSum(int[][]nums){
-    int sum = 0;
-    for(int i = 0; i < nums.length; i++){
-        for(int k = 0; k < nums[k].length; i++){
-            sum += nums[i][k]
-        }
-    }
-    return sum;
-  }
-  public static void main(String[] args){
     int[][] tester = new int[][] {{2, 4, 5}, {3, 4, 9}, {9, 19, 21}};
+    int[][] empty = new int[4][2];
     System.out.println("expected: 76\nresult: " + arr2DSum(tester));
+    System.out.println("expected: 0\nresult: " + arr2DSum(empty));
   }
 }
