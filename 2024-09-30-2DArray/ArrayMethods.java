@@ -53,5 +53,7 @@ public class ArrayMethods {
     int[][] empty = new int[4][2];
     System.out.println("expected: 76\nresult: " + arr2DSum(tester));
     System.out.println("expected: 0\nresult: " + arr2DSum(empty));
+    int[][] tester1 = new int[][] {{2, 3, 4}, {6, 7, 8}};
+    System.out.println("expected: {2, 6}, {3, 7}, {4, 8}\nresult: " + swapRC(tester1));
   }
 }
