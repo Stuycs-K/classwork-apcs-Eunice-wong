@@ -37,7 +37,7 @@ public class ArrayMethods {
     int columns = nums[0].length;
     int[][] result = new int[columns][rows];
     for(int i = 0; i < columns; i++){
-      for(int k = 0; k < rows; i++){
+      for(int k = 0; k < rows; k++){
         result[i][k] = nums[k][i];
       }
     }
@@ -54,6 +54,6 @@ public class ArrayMethods {
     System.out.println("expected: 76\nresult: " + arr2DSum(tester));
     System.out.println("expected: 0\nresult: " + arr2DSum(empty));
     int[][] tester1 = new int[][] {{2, 3, 4}, {6, 7, 8}};
-    System.out.println("expected: {2, 6}, {3, 7}, {4, 8}\nresult: " + swapRC(tester1));
+    System.out.println("expected: [[2, 6], [3, 7], [4, 8]]\nresult: " + arrToString(swapRC(tester1)));
   }
 }
