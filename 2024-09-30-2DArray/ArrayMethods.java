@@ -3,6 +3,7 @@
 //Axel Stahl axels21@nycstudents.net
 
 public class ArrayMethods {
+
   public static String aryToString(int[] nums) {
     String result = "[";
     for (int i=0; i<nums.length;i++) {
@@ -13,6 +14,7 @@ public class ArrayMethods {
     }
     return result+"]";
   }
+
   public static String arrToString(int[][] ary){
     String result = "[";
     for (int i=0; i<ary.length;i++) {
@@ -23,6 +25,7 @@ public class ArrayMethods {
     }
     return result+"]";
   }
+
   public static int arr2DSum(int[][]nums){
     int sum = 0;
     for(int i = 0; i < nums.length; i++){
@@ -32,6 +35,7 @@ public class ArrayMethods {
     }
     return sum;
   }
+
   public static int[][] swapRC(int[][]nums){
     int rows = nums.length;
     int columns = nums[0].length;
@@ -42,6 +46,33 @@ public class ArrayMethods {
       }
     }
     return result; 
+  }
+
+   public static void replaceNegative(int[][] vals) {
+    for (int i = 0; i < vals.length; i++) {
+      for (int j = 0; j < vals[i].length; j++) {
+        if (vals[i][j] < 0) {
+          if (i==j) {
+            vals[i][j] = 1;
+          }
+          else {
+            vals[i][j] = 0;
+          }
+        }
+      }
+    }
+    return vals;
+  }
+
+  public static int[][] copy (int[][] nums){
+    int[][] copy = new int[nums.length][];
+    for (int i = 0; i < nums.length; i++){
+      copy[i] = new int[nums[i].length];
+      for (int j = 0; nums[i].length; j++){
+        copy[i][j] = nums[i][j];
+      }
+    }
+    return copy;
   }
 
   public static void main(String[] args){
@@ -55,5 +86,6 @@ public class ArrayMethods {
     System.out.println("expected: 0\nresult: " + arr2DSum(empty));
     int[][] tester1 = new int[][] {{2, 3, 4}, {6, 7, 8}};
     System.out.println("expected: [[2, 6], [3, 7], [4, 8]]\nresult: " + arrToString(swapRC(tester1)));
+
   }
 }
