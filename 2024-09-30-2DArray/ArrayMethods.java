@@ -61,14 +61,13 @@ public class ArrayMethods {
         }
       }
     }
-    return vals;
   }
 
   public static int[][] copy (int[][] nums){
     int[][] copy = new int[nums.length][];
     for (int i = 0; i < nums.length; i++){
       copy[i] = new int[nums[i].length];
-      for (int j = 0; nums[i].length; j++){
+      for (int j = 0; j < nums[i].length; j++){
         copy[i][j] = nums[i][j];
       }
     }
@@ -86,6 +85,9 @@ public class ArrayMethods {
     System.out.println("expected: 0\nresult: " + arr2DSum(empty));
     int[][] tester1 = new int[][] {{2, 3, 4}, {6, 7, 8}};
     System.out.println("expected: [[2, 6], [3, 7], [4, 8]]\nresult: " + arrToString(swapRC(tester1)));
-
+    int[][] original = new int[][] {{2, 3, 4,}, {5, 6, 7}};
+    int[][] dup = copy(original);
+    original[0][0] = 99;
+    System.out.println("expected: [[2, 3, 4], [5, 6, 7]]\nresult: " + arrToString(copy(dup)));
   }
 }
