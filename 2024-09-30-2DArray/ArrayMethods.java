@@ -48,7 +48,7 @@ public class ArrayMethods {
     return result; 
   }
 
-   public static void replaceNegative(int[][] vals) {
+  public static void replaceNegative(int[][] vals) {
     for (int i = 0; i < vals.length; i++) {
       for (int j = 0; j < vals[i].length; j++) {
         if (vals[i][j] < 0) {
@@ -85,6 +85,9 @@ public class ArrayMethods {
     System.out.println("expected: 0\nresult: " + arr2DSum(empty));
     int[][] tester1 = new int[][] {{2, 3, 4}, {6, 7, 8}};
     System.out.println("expected: [[2, 6], [3, 7], [4, 8]]\nresult: " + arrToString(swapRC(tester1)));
+    int[][] negatives = new int[][] {{-9, 3, -8}, {0, -3, -4, 1}};
+    replaceNegative(negatives);
+    System.out.println("expected: [[1, 3, 0], [0, 1, 0, 1]]\nresult: " + arrToString(negatives));
     int[][] original = new int[][] {{2, 3, 4,}, {5, 6, 7}};
     int[][] dup = copy(original);
     original[0][0] = 99;
