@@ -1,9 +1,10 @@
+import java.util.Arrays;
 public class ArrayDemo{
   public static void main(String[] args){
     int[] test1d = new int[]{1, 2, 3, 4};
     int[][] test2d = new int[4][2];
     System.out.println("expected:" + Arrays.toString(test1d) + "\nresult: " + aryToString(test1d));
-    System.out.println("expected:" + Arrays.toString(test2d) "\nresult: " + arrToString(test2d));
+    System.out.println("expected:" + Arrays.toString(test2d) + "\nresult: " + arrToString(test2d));
     int[][] tester = new int[][] {{2, 4, 5}, {3, 4, 9}, {9, 19, 21}};
     int[][] empty = new int[4][2];
     System.out.println("expected: 76\nresult: " + arr2DSum(tester));
@@ -49,6 +50,7 @@ public class ArrayDemo{
         }
       }
     }
+    return count;
   }
 
 
