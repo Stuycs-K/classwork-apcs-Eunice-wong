@@ -113,7 +113,7 @@ public class ArrayDemo{
         }
         else result = result + "<td>" + nums[i][k] + "</td>";
         if (k == nums[i].length - 1){
-          result = result + "</t";
+          result = result + "</tr>";
           }
           }
     }
