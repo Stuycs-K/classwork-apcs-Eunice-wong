@@ -4,7 +4,9 @@ public class ArrayDemo{
     int[] test1d = new int[]{1, 2, 3, 4};
     int[][] test2d = new int[4][2];
     System.out.println("expected:" + Arrays.toString(test1d) + "\nresult: " + aryToString(test1d));
-    System.out.println("expected:" + Arrays.toString(test2d) + "\nresult: " + arrToString(test2d));
+    System.out.println("expected: [[0, 0], [0, 0], [0, 0], [0, 0]]\nresult: " + arrToString(test2d));
+    int[][] zeroz = new int[][] {{0, 0}, {0, 0}, {0, 2}, {0, 0}};
+    System.out.println("expected: 7\nresult: " + countZeros2D(zeroz));
     int[][] tester = new int[][] {{2, 4, 5}, {3, 4, 9}, {9, 19, 21}};
     int[][] empty = new int[4][2];
     System.out.println("expected: 76\nresult: " + arr2DSum(tester));
@@ -44,7 +46,7 @@ public class ArrayDemo{
   public static int countZeros2D(int[][] nums){
     int count = 0;
     for (int i = 0; i < nums.length; i++){
-      for (int k = 0; k < nums[i].length; i++){
+      for (int k = 0; k < nums[i].length; k++){
         if (nums[i][k] == 0){
           count += 1;
         }
