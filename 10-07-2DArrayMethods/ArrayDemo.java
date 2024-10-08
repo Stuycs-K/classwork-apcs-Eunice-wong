@@ -20,6 +20,8 @@ public class ArrayDemo{
     int[][] dup = copy(original);
     original[0][0] = 99;
     System.out.println("expected: [[2, 3, 4], [5, 6, 7]]\nresult: " + arrToString(copy(dup)));
+    int[][] html = new int[][] {{1,2},{3}};
+    System.out.println("expected: <table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>\nresult: " + htmlTable(html));
   }
   public static String aryToString(int[] nums) {
     String result = "[";
@@ -111,7 +113,7 @@ public class ArrayDemo{
         if (k == 0){
           result = result + "<tr>";
         }
-        else result = result + "<td>" + nums[i][k] + "</td>";
+        result = result + "<td>" + nums[i][k] + "</td>";
         if (k == nums[i].length - 1){
           result = result + "</tr>";
           }
@@ -120,4 +122,3 @@ public class ArrayDemo{
     return result + "<table>";
   }
 }
-
