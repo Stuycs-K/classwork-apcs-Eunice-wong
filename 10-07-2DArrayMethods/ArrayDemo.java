@@ -103,4 +103,19 @@ public class ArrayDemo{
     }
     return copy;
   }
+
+  public static String htmlTable(int[][]nums){
+    String result = "<table>"
+    for (int i = 0; i < nums.length; i++){
+      for (int k = 0; k < nums[i].length; k++){
+        if (k == 0){
+          result = result + "<tr>";
+        }
+        else result = result + "<td>" + Arrays.toString(nums[i][k]) + "</td>";
+        if (k == nums[i].length - 1){
+          result = result + "</t"
+      }
+    }
+  }
+  return result + "<table>"
 }
