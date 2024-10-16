@@ -25,7 +25,10 @@ public class Demo{
       Point p4 = new Point(p3);
       System.out.println("p3:" + p3 + "p4:" + p4);
       Point p7 = new Point(1, 1);
-      Point p8 = new Point(0.5, (1-(2 * Math.sqrt(3))));
-      Point p9 = new Point(1.5, (1-(2 * Math.sqrt(3))));
+      Point p8 = new Point(1.5, (1+(Math.sqrt(3) / 2)));
+      Point p9 = new Point(0.5, (1+(Math.sqrt(3) / 2)));
+      System.out.println(Point.distance(p7,p8));
+      System.out.println(Point.distance(p8,p9));
+      System.out.println(Point.distance(p7,p9));
     }
   }
