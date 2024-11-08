@@ -1,12 +1,22 @@
-//Instead of just printing out the original speak() method, it adds on the string "The Mighty" in front of it to create the string "The mighty NAME"
+/* 
+Instead of just printing out the original getName() method, which returns only the name, it adds on the string "The Mighty" in front of it to return the string "The mighty " and then whatever the name is. 
+*/
+/*
+Bird b2 = new Animal(...) doesn't work because this is saying Animal is-a Bird when it really is Bird is-a Animal.
+*/
 public class Driver {
   public static void main(String[] args){
     Animal Animal1 = new Animal("arg", 15, "Sa");
     Animal1.speak();
     Bird Bird1 = new Bird("arg", 15, "Sa", 12.3, "red");
     Bird1.speak();
+    Animal a1 = new Animal("hee", 15, "Freak");
+    Bird b1 = new Bird("squeak", 15, "France", 12.3, "grey");
+    //Bird b2 = new Animal("arg", 15, "Sa");
+    Animal a2 = new Bird("bark", 15, "Bob", 12.3, "brown");
   }
 }
+
 class Animal {
   private String noise;
   private int age;
@@ -33,6 +43,7 @@ class Animal {
     return noise;
   }
 }
+
 class Bird extends Animal {
     private double height;
     private String color;
