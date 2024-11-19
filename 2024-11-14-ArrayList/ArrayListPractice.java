@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 public class ArrayListPractice{
   public static ArrayList<String>createRandomArray(int size){
-    ArrayList<String>result = new ArrayList<String>(size);
+    ArrayList<String> result = new ArrayList<String>(size);
     String stored = "";
     for(int i = 0; i < size; i++){
       stored += (int)(Math.random() * 11);
@@ -14,47 +14,35 @@ public class ArrayListPractice{
     return result;
   }
   public static void replaceEmpty(ArrayList<String> original){
-    for(int i = 0; i < original.length; i++){
-      original.add(original.indexOf(""), "Empty");
+    for(int i = 0; i < original.size(); i++){
+      if (original.get(i).equals("")){
+        original.set(i, "Empty");
+      }
     }
     return original;
   }
   public static ArrayList<String> makeReversedList( ArrayList<String> original){
-    for (int i = 0; i < original.length; i++){
-        original.set(i, original.get(original.length - i));
+    ArrayList<String> reversed = new ArrayList<>();
+    for(int i = original.size() - 1; i >= 0 ; i --){
+        reversed.add(original.get(i));
     }
-    return original;
+    return reversed;
   }
   public static ArrayList<String> mixLists( ArrayList<String> a,  ArrayList<String> b){
-    ArrayList<String>result = new ArrayList<String>(a.length + b.length);
-    int length = b.length * 2;
-    int total = b.length + a.length;
-    int reset = b.length;
-  if (a.length < b.length){
-    for (int i = 0; i < length; i++){
-        result.set(i, a.get(i));
-        i++;
-        result.set(i, b.get(i));
+    ArrayList<String>result = new ArrayList<String>(a.size() + b.size());
+    int minSize = Math.min(a.size(), b.size());
+    for(int i = 0; i < minSize; i++){
+        result.add(a.get(i));
+        result.add(b.get(i));
     }
-    for (int i = length; i < total; i++){
-        result.set(i, b.get(reset));
-        reset++;
+    if (a.size() > minSize){
+        result.addAll(a.subList(minSize, a.size()));
+    }
+    if (b.size() > minSize){
+        result.addAll(b.subList(minSize, b.size()));
     }
     return result;
   }
-    if (a.length > b.length){
-    for (int i = 0; i < length; i++){
-        result.set(i, a.get(i));
-        i++;
-        result.set(i, b.get(i));
-    }
-    for (int i = length; i < total; i++){
-        result.set(i, a.get(reset));
-        reset++;
-    }
-    return result;
-  }
-} 
   public static void main(String[] args){
     System.out.println(createRandomArray(30));
     System.out.println(replaceEmpty(createRandomArray(300000)));
