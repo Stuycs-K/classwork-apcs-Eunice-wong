@@ -19,7 +19,7 @@ public class ArrayListPractice{
         original.set(i, "Empty");
       }
     }
-    return original;
+    System.out.println(original);
   }
   public static ArrayList<String> makeReversedList( ArrayList<String> original){
     ArrayList<String> reversed = new ArrayList<>();
@@ -45,6 +45,8 @@ public class ArrayListPractice{
   }
   public static void main(String[] args){
     System.out.println(createRandomArray(30));
-    System.out.println(replaceEmpty(createRandomArray(300000)));
+    replaceEmpty(createRandomArray(300000));
+    System.out.println(makeReversedList(createRandomArray(30)));
+    System.out.println(mixLists(createRandomArray(10), createRandomArray(100)));
   }
 }
