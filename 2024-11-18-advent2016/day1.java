@@ -9,42 +9,43 @@ public class day1{
         int position = 1;
         File file = new File(filename);
         Scanner input = new Scanner(file);
-        while (input.hasNextChar()) {
+        while (input.hasNext()) {
             if(position > 4){
                 position = 1;
             }
             if (input.next().equals("L")){
                 position --;
                 if (position == 1){
-                    y += parseInt(input.next());
+                    y += Integer.parseInt(input.next());
                 }
                 if (position == 2){
-                    x += parseInt(input.next());
+                    x += Integer.parseInt(input.next());
                 }
                 if (position == 3){
-                    y -= parseInt(input.next());
+                    y -= Integer.parseInt(input.next());
                 }
                 if (position == 4){
-                    x -= parseInt(input.next());
+                    x -= Integer.parseInt(input.next());
                 }
             }
-            if (input.next().equals("R")){
+            else{
                 position ++;
                 if (position == 1){
-                    y += parseInt(input.next());
+                    y += Integer.parseInt(input.next());
                 }
                 if (position == 2){
-                    x += parseInt(input.next());
+                    x += Integer.parseInt(input.next());
                 }
                 if (position == 3){
-                    y -= parseInt(input.next());
+                    y -= Integer.parseInt(input.next());
                 }
                 if (position == 4){
-                    x -= parseInt(input.next());
+                    x -= Integer.parseInt(input.next());
                 }
             }
+
         }
         input.close();
-        return x + y;
+        return Math.abs(x) + Math.abs(y);
     }
 }
