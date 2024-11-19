@@ -43,6 +43,7 @@ public class day1{
             else {
                 x -= distance;
             }
+
         }
         input.close();
         } catch (FileNotFoundException e) {
