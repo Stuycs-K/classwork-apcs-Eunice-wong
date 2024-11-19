@@ -7,44 +7,54 @@ public class day1{
         int x = 0;
         int y = 0;
         int position = 1;
+        try{
         File file = new File(filename);
         Scanner input = new Scanner(file);
-        while (input.hasNextChar()) {
-            if(position > 4){
+        while (input.hasNext()) {
+            String direction = input.next(); // "L" or "R"
+            if (!input.hasNextInt()) {
+                    throw new NumberFormatException("Expected a number after " + direction);
+                }
+            int distance = Integer.parseInt(input.next());; // Distance value
+
+            if (position > 4){
                 position = 1;
             }
-            if (input.next().equals("L")){
+
+            if (direction.equals("L")){
                 position --;
-                if (position == 1){
-                    y += parseInt(input.next());
-                }
-                if (position == 2){
-                    x += parseInt(input.next());
-                }
-                if (position == 3){
-                    y -= parseInt(input.next());
-                }
-                if (position == 4){
-                    x -= parseInt(input.next());
-                }
             }
-            if (input.next().equals("R")){
+            else if(direction.equals("R")){
                 position ++;
-                if (position == 1){
-                    y += parseInt(input.next());
+            }
+            else {
+                    throw new IllegalArgumentException("Unexpected direction: " + direction);
                 }
-                if (position == 2){
-                    x += parseInt(input.next());
-                }
-                if (position == 3){
-                    y -= parseInt(input.next());
-                }
-                if (position == 4){
-                    x -= parseInt(input.next());
-                }
+
+            if (position == 1){
+                y += distance;
+            }
+            else if (position == 2){
+                x += distance;
+            }
+            else if (position == 3){
+                y -= distance;
+            }
+            else {
+                x -= distance;
             }
         }
         input.close();
-        return x + y;
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found: " + filename);
+            return 0;
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid number format in file");
+            return 0;
+        }
+        return Math.abs(x) + Math.abs(y);
+    }
+    public static void main(String[] args) {
+        System.out.println(countDistance("day1.txt"));
     }
 }
