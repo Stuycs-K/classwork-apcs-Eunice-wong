@@ -2,7 +2,7 @@ import java.util.Arrays;
 public class day2{
     public static String passcode(String[] nums){
         String[][] keypad = {
-            {null, null, "1", null, null}
+            {null, null, "1", null, null},
             {null, "2", "3", "4", null}, 
             {"5", "6", "7", "8", "9"}, 
             {null, "A", "B", "C", null},
@@ -17,21 +17,21 @@ public class day2{
                 char move = num.charAt(d);
                 int newRow = row;
                 int newColumn = column;
-                if (move == 'L' && column > 0){
+                if (move == 'L'){
                   newColumn--;
                   }
-                  else if(move == 'R' && column < 2){
+                  else if(move == 'R'){
                     newColumn++;
                   }
-                  else if(move == 'U' && row > 0){
+                  else if(move == 'U'){
                     newRow--;
                   }
-                  else if(move == 'D' && row < 2){
+                  else if(move == 'D'){
                     newRow++;
                  }
                 if (newColumn >= 0 && newColumn < 5 && newRow >=0 && newRow < 5 && keypad[newRow][newColumn] != null){
                     row = newRow;
-                    column = newColumn
+                    column = newColumn;
                 }
             }
             compiler += keypad[row][column];    
