@@ -12,23 +12,24 @@ public class day2{
         for(int i = 0; i < nums.length; i++){
             String num = nums[i];
             for (int d = 0; d < num.length(); d++){  
-            if (num.charAt(i) == 'L' && column > 0){
-                column--;
+                char move = num.charAt(d);
+                if (move == 'L' && column > 0){
+                  column--;
+                  }
+                  else if(move == 'R' && column < 2){
+                    column++;
+                  }
+                  else if(move == 'U' && row > 0){
+                  row--;
+                  }
+                  else if(move == 'D' && row < 2){
+                 row++;
+                 }
             }
-            else if(num.charAt(i) == 'R' && column < 2){
-                column++;
-            }
-            else if(num.charAt(i) == 'U' && row > 0){
-                row--;
-            }
-            else if(num.charAt(i) == 'D' && row < 2){
-                row++;
-            }
-        }
-        compiler += keypad[row][column];
+            compiler += keypad[row][column];
         }
         return compiler;
-        }
+    }
     public static void main(String[] args){
         String[] instructions = {
             "DLRRRRLRLDRRRURRURULRLLULUURRRDDLDULDULLUUDLURLURLLDLUUUDUUUULDRDUUDUDDRRLRDDDUDLDLLRUURDRULUULRLRDULULLRLRLRLDRLUULDLDDDDRRLRUUUDDRURRULLLRURLUURULLRLUDDLDRUULDRURULRRRLLLRDLULDRRDDUDLURURLDULDRDRLDDUURRDUDDRDUURDULDUURDUDRDRULDUDUULRRULUUURDUURUDLDURDLRLURUUDRRDLRUDRULRURLDLLDLLRRDRDRLRRRULDRRLDUURLUUDLUUDDLLRULRDUUDURURLUURDRRRUDLRDULRRRLDRDULRUUDDDLRDUULDRLLDRULUULULRDRUUUULULLRLLLRUURUULRRLDDDRULRRRUDURURRULRUUUDLLUDURDRDDLLRLLUDRUDDRLRRDLDLDRDULDLULURDLUDDDUULURLDRUUURURLLRRDDDUUDRLRLLDLDRDDDRDUDLRDRDLLLDDLDUDDRUDUUDLLLLLDULRLURRRLLURUUULUDRLRLRLURRDRLLLRLLULRLLLDDLRLRDLUUUUUDULULDDULLUDUURDLRUDLRUDLRLLRLDLULRLDUDRURURDLRULDLULULDLLDLDLDLLLUDUDDLRLRRDULLUDRDDLLLDUURDULUDURLLLDRUDDDLRLULDLDRRDDDRDULDDUDRDDULLULRRLRUULRDUDURUDULUDUDURLDRDUUDDRRLRURDRRLRDDDDRUDLUDLDDLRDLUUDLRRURDDLURDLRDLLRDRDLDLDUUUURULUULDDDDLDULUURRRULUDLLLDRULDRURL",
