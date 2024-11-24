@@ -2,31 +2,39 @@ import java.util.Arrays;
 public class day2{
     public static String passcode(String[] nums){
         String[][] keypad = {
-            {"1", "2", "3"}, 
-            {"4", "5", "6"}, 
-            {"7", "8", "9"}
+            {null, null, "1", null, null}
+            {null, "2", "3", "4", null}, 
+            {"5", "6", "7", "8", "9"}, 
+            {null, "A", "B", "C", null},
+            {null, null, "D", null, null}
             };
-        int row = 1;
-        int column = 1;
+        int row = 2;
+        int column = 0;
         String compiler = "";
         for(int i = 0; i < nums.length; i++){
             String num = nums[i];
             for (int d = 0; d < num.length(); d++){  
                 char move = num.charAt(d);
+                int newRow = row;
+                int newColumn = column;
                 if (move == 'L' && column > 0){
-                  column--;
+                  newColumn--;
                   }
                   else if(move == 'R' && column < 2){
-                    column++;
+                    newColumn++;
                   }
                   else if(move == 'U' && row > 0){
-                  row--;
+                    newRow--;
                   }
                   else if(move == 'D' && row < 2){
-                 row++;
+                    newRow++;
                  }
+                if (newColumn >= 0 && newColumn < 5 && newRow >=0 && newRow < 5 && keypad[newRow][newColumn] != null){
+                    row = newRow;
+                    column = newColumn
+                }
             }
-            compiler += keypad[row][column];
+            compiler += keypad[row][column];    
         }
         return compiler;
     }
