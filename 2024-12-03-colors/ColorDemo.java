@@ -9,8 +9,8 @@ public class ColorDemo{
         System.out.print( "\u001b[" + foreground + ";" + (10+background) + "m");
     }
 
-    public static Void color(int foreground, int background, int modifier){
-        System.out.print( "\u001b[" + foreground + ";" + (10+background) + + ";" + modifier + "m");
+    public static void color(int foreground, int background, int modifier){
+        System.out.print( "\u001b[" + foreground + ";" + (10+background) + ";" + modifier + "m");
     }
     public static void go(int r,int c){
         System.out.print("\u001b[" + r + ";" + c + "f");
@@ -33,10 +33,12 @@ public class ColorDemo{
         for(int i = 0; i < drops; i++){
             int randomCol = (int) (Math.random() * col) + 1;
             for (int r = 0; r <= rows; r++){
+                int random = (int)(Math.random() * 256);
+                color(BLACK, BLACK, random);
                 go(r, randomCol);
-                System.out.println(",");
+                System.out.println(".");
                 go(r, randomCol);
-                System.out.priny(" ");
+                System.out.print(" ");
             }
         }
         System.out.print(SHOW_CURSOR);
