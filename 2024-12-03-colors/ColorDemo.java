@@ -15,6 +15,12 @@ public class ColorDemo{
     public static void go(int r,int c){
         System.out.print("\u001b[" + r + ";" + c + "f");
     }
+    public static void sleep(int milli){
+      try{
+        Thread.sleep(milli);
+        }catch(Exception e){
+      }
+    }   
     public static void main(String[] args){
         /*
         for(int r = 0; r < 256; r+=32){
@@ -34,11 +40,10 @@ public class ColorDemo{
             int randomCol = (int) (Math.random() * col) + 1;
             for (int r = 0; r <= rows; r++){
                 int random = (int)(Math.random() * 256);
-                color(BLACK, BLACK, random);
+                color(random, BLACK);
                 go(r, randomCol);
                 System.out.println(".");
-                go(r, randomCol);
-                System.out.print(" ");
+                sleep(5);
             }
         }
         System.out.print(SHOW_CURSOR);
