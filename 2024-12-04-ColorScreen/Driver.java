@@ -71,11 +71,11 @@ public static void display(){
         border += "-";
     }
     System.out.println(border);
-    int[] threeRandom = new int[3];
-    for (int i = 0; i < 3; i++){
-        threeRandom[i] = (int) (Math.random() * 100);
-    }
-    for (int r = 0; r < 81; r++){
+    for (int r = 0; r < 30; r++){
+        int[] threeRandom = new int[3]; 
+        for (int i = 0; i < 3; i++){
+            threeRandom[i] = (int) (Math.random() * 100);
+        }
         for (int i = 0; i < threeRandom.length; i++){
             int num = threeRandom[i];
             int color;
@@ -88,23 +88,25 @@ public static void display(){
             else {
                 color = WHITE;
             }
-            if (r == 40 && i == 1){
+
+            if (i == 1 && r == 15){
                 color = MAGENTA;
             }
             color(color);
-            go (r, 10 * i);
+            go (r + 1 , 26 * i + 1);
             System.out.print(num);
         }
     }
     go(3, 0);
-    color(DARK,WHITE);
     System.out.print(border);
     go(31,1);
+    System.out.print(RESET);
 }
 
 
 public static void main(String[]args){
-  display();
+    System.out.print(CLEAR_SCREEN);
+    display();
   //SHOW A LOT OF COLORS!
   /*for(int i = 0; i < 8; i++){
     for(int j = 0; j < 8; j++){
