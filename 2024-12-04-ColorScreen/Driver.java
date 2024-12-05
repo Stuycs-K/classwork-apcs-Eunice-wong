@@ -94,7 +94,7 @@ public static void display(){
                 color = MAGENTA;
             }
             color(color);
-            go (r + 2 , 26 * i + 1);
+            go (r + 2 , 39 * i + 1);
             System.out.print(num);
         }
     }
