@@ -65,12 +65,44 @@ public static void erase(int r, int c, int size){
   }
 }
 
-public static void main(String[]args){
-  System.out.print(CLEAR_SCREEN);
-  System.out.print(HIDE_CURSOR);
+public static void display(){
+    String border = "";
+    for (int i = 0; i < 80; i++){
+        border += "-";
+    }
+    System.out.println(border);
+    int[] threeRandom = new int[3];
+    for (int i = 0; i < 3; i++){
+        threeRandom[i] = (int) (Math.random() * 100);
+    }
+    for (int r = 0; r < 81; r++){
+        for (int i = 0; i < threeRandom.length; i++){
+            int num = threeRandom[i];
+            int color;
+            if (num < 25){
+                color = RED;
+            }
+            else if (num > 75){
+                color = GREEN;
+            }
+            else {
+                color = WHITE;
+            }
+            go (r, 10 * i);
+            color(BRIGHT, color);
+        }
+    }
+    go(3, 0);
+    color(DARK,WHITE);
+    System.out.print(border);
+    go(31,1);
+}
 
+
+public static void main(String[]args){
+  display();
   //SHOW A LOT OF COLORS!
-  for(int i = 0; i < 8; i++){
+  /*for(int i = 0; i < 8; i++){
     for(int j = 0; j < 8; j++){
       go(i+1,j+1);
       color(30+i,background(30+j));
@@ -101,6 +133,6 @@ public static void main(String[]args){
   erase(14,26,2);
   go(15,0);//so the prompt is printed BELOW the other text.
   System.out.println(RESET);
-
+*/
 }
 }
