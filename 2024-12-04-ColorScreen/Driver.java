@@ -88,8 +88,12 @@ public static void display(){
             else {
                 color = WHITE;
             }
+            if (r == 40 && i == 1){
+                color = MAGENTA;
+            }
+            color(color);
             go (r, 10 * i);
-            color(BRIGHT, color);
+            System.out.print(num);
         }
     }
     go(3, 0);
