@@ -70,6 +70,7 @@ public static void display(){
     for (int i = 0; i < 80; i++){
         border += "-";
     }
+    go(0,0);
     System.out.println(border);
     for (int r = 0; r < 30; r++){
         int[] threeRandom = new int[3]; 
@@ -93,11 +94,12 @@ public static void display(){
                 color = MAGENTA;
             }
             color(color);
-            go (r + 1 , 26 * i + 1);
+            go (r + 2 , 26 * i + 1);
             System.out.print(num);
         }
     }
-    go(3, 0);
+    go(31, 0);
+    color(WHITE);
     System.out.print(border);
     go(31,1);
     System.out.print(RESET);
