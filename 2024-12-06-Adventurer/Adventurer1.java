@@ -44,7 +44,9 @@ public class Adventurer1 extends Adventurer{
         return getName() + "heals" + other.getName() + "with" + healing + "HP";
     }
     public abstract String support(){
-        
+        int healing = 5;
+        this.setHP(Math.min(getHP() + 5, getmaxHP()));
+        return getName() + "heals themself" + "with" + healing + "HP";
     }
 
   //hurt or hinder the target adventurer, consume some special resource
