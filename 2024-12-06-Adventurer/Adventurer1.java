@@ -40,11 +40,12 @@ public class Adventurer1 extends Adventurer{
     
     public abstract String support(Adventurer other){
         int healing = 5;
-        other.setHP(Math.min(the))
+        other.setHP(Math.min(other.getHP() + 5, other.getmaxHP()));
+        return getName() + "heals" + other.getName() + "with" + healing + "HP";
     }
-
-  //heall or buff self
-  public abstract String support();
+    public abstract String support(){
+        
+    }
 
   //hurt or hinder the target adventurer, consume some special resource
   public abstract String specialAttack(Adventurer other);
