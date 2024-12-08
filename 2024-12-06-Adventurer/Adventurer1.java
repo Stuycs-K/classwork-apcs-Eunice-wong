@@ -31,15 +31,17 @@ public class Adventurer1 extends Adventurer{
         return fireDamageMax;
     }
 
-  /*
-    all adventurers must have a way to attack enemies and
-    support their allys
-  */
-  //hurt or hinder the target adventurer
-  public abstract String attack(Adventurer other);
 
-  //heall or buff the target adventurer
-  public abstract String support(Adventurer other);
+    public abstract String attack(Adventurer other){
+        int damage = 10;
+        other.applyDamage(damage);
+        return getName() + "strikes" + other.getName() + "with" + damage + "damage";
+    }
+    
+    public abstract String support(Adventurer other){
+        int healing = 5;
+        other.setHP(Math.min(the))
+    }
 
   //heall or buff self
   public abstract String support();
