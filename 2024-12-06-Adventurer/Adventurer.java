@@ -33,13 +33,9 @@ public abstract class Adventurer{
     consumable resource (mana/rage/money/witts etc)
   */
   //give it a short name (fewer than 13 characters)
-  public abstract String getSpecialName(){
-    name = "Blub" + toString();
-  }
+  public abstract String getSpecialName();
   //accessor methods
-  public abstract int getSpecial(){
-    
-  }
+  public abstract int getSpecial(); 
   public abstract void setSpecial(int n);
   public abstract int getSpecialMax();
 
