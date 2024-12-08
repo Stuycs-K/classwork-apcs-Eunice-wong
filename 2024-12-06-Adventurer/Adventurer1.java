@@ -48,7 +48,14 @@ public class Adventurer1 extends Adventurer{
         this.setHP(Math.min(getHP() + 5, getmaxHP()));
         return getName() + "heals themself" + "with" + healing + "HP";
     }
-
-  //hurt or hinder the target adventurer, consume some special resource
-  public abstract String specialAttack(Adventurer other);
+    public abstract String specialAttack(Adventurer other){
+        int cost = 20;
+        if (this.fireDamage < 20){
+            return getName() + "failed to unleash a special attack";
+        }
+        int specialAttackDamage = 25;
+        other.applyDamage(specialAttackDamage);
+        this.fireDamage = fireDamage - cost;
+        return getName() + "knocked" + other.getName() + "off their feet!";
+    }
 }
