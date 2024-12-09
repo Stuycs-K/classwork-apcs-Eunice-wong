@@ -3,9 +3,15 @@ public class Adventurer1 extends Adventurer{
     private int fireDamageMax;
 
     Adventurer p1 = new Adventurer1("Fire", 10, 30);
-    
+
+    public Adventurer1(){
+      this("Fire", 20, 100);
+    }
     public Adventurer1(String name){
         this(name, 20, 100);
+    }
+    public Adventurer1(String name,int hp){
+      super(name,hp);
     }
     public Adventurer1(String name, int hp, int fireDamageMax){
         super(name, hp);
@@ -39,7 +45,7 @@ public class Adventurer1 extends Adventurer{
         other.applyDamage(damage);
         return getName() + "strikes" + other.getName() + "with" + damage + "damage";
     }
-    
+
     public String support(Adventurer other){
         int healing = 5;
         other.setHP(Math.min(other.getHP() + 5, other.getmaxHP()));
