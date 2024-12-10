@@ -30,4 +30,17 @@ public class Game{
         System.out.println("Invalid input. Try again.");
       }
     }
+    if (action.equals("quit")){
+      System.out.println("Goodbye. See you next time!");
+      gameRunning = false;
+    }
+    else if (action.equals("a") || action.equals("attack")){
+      System.out.println(p1.attack(p2));
+    }
+    else if (action.equals("sp") || action.equals("special")){
+      System.out.println(p1.specialAttack(p2));
+    }
+    else if (action.equals("su") || action.equals("support")){
+      System.out.println(p1.support())
+    }
 }
