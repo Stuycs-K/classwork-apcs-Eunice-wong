@@ -43,8 +43,8 @@ public class Game{
     else if (action.equals("su") || action.equals("support")){
       System.out.println(p1.support());
     }
-    if (p2.getHP > 0){
-      int randomAction = random.nextInt(3);
+    if (p2.getHP() > 0){
+      int randomAction = (int)(Math.random() * 3) + 1;
       if (randomAction == 0){
         System.out.println(p2.attack(p1));
       }
