@@ -41,6 +41,21 @@ public class Game{
       System.out.println(p1.specialAttack(p2));
     }
     else if (action.equals("su") || action.equals("support")){
-      System.out.println(p1.support())
+      System.out.println(p1.support());
     }
+    if (p2.getHP > 0){
+      int randomAction = random.nextInt(3);
+      if (randomAction == 0){
+        System.out.println(p2.attack(p1));
+      }
+      else if (randomAction == 1){
+        System.out.println(p2.specialAttack(p1));
+      }
+      else {
+        System.out.println(p2.support());
+      }
+    }
+    }
+    userInput.close();
+  }
 }
