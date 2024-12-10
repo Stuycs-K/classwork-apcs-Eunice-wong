@@ -18,8 +18,16 @@ public class Game{
       gameRunning = false;
     }
     String action = "";
-    boolean invalid = false;
-    while (!invalid){
-      
+    boolean valid = false;
+    while (!valid){
+      System.out.println("Type in lowercase: (a)ttack / (sp)ecial / (su)pport / quit");
+      action = userInput.nextLine();
+      valid = action.equals("a") || action.equals("attack") ||
+              action.equals("sp") || action.equals("special") ||
+              action.equals("su") || action.equals("support") ||
+              action.equals("quit");
+      if(!valid){
+        System.out.println("Invalid input. Try again.");
+      }
     }
 }
